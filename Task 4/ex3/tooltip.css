@@ -1,0 +1,187 @@
+:root{
+  --light-blue: blue;
+  --light-black: black;
+  --light-white: white;
+
+  --dark-blue: blue;
+  --dark-black: black;
+  --light-white: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tooltip{
+  color: var(--light-blue);
+  text-decoration: underline;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltipright {
+  visibility: hidden;
+  width: 80px;
+  background-color: var(--light-black);
+  color: var(--light-white);
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  left: 120%;
+}
+
+.tooltip .tooltipright::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  border-style: solid;
+  border-color: transparent var(--light-black) transparent transparent;
+}
+
+.tooltip:hover .tooltipright {
+  visibility: visible;
+}
+
+.tooltip .tooltipleft {
+  visibility: hidden;
+  width: 120px;
+  background-color: var(--light-black);
+  color: var(--light-white);
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 110%;
+}
+
+.tooltip .tooltipleft::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--light-black);
+}
+
+.tooltip:hover .tooltipleft {
+  visibility: visible;
+}
+
+.tooltip .tooltipleft::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--light-black);
+}
+
+.tooltip .tooltiptop {
+  visibility: hidden;
+  width: 120px;
+  background-color: var(--light-black);
+  color: var(--light-white);
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptop::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--light-black) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptop {
+  visibility: visible;
+}
+
+.tooltip .tooltipbottom {
+  visibility: hidden;
+  width: 120px;
+  background-color: var(--light-black);
+  color: var(--light-white);
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltipbottom::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent var(--light-black) transparent;
+}
+
+.tooltip:hover .tooltipbottom {
+  visibility: visible;
+}
+
+/* The tooltip should have an arrow pointing exactly to the center of the trigger */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted var(--light-black);
+}
+
+.tooltip .tooltipcenter {
+  visibility: hidden;
+  width: 120px;
+  background-color: var(--light-black);
+  color: var(--light-white);
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 110%;
+  box-shadow: 4px 4px 5px var(--light-black);
+}
+
+.tooltip .tooltipcenter::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent var(--light-black) transparent transparent;
+}
+.tooltip:hover .tooltipcenter {
+  visibility: visible;
+}
+
+/* dark theme */
