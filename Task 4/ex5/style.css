@@ -1,0 +1,74 @@
+* {
+    margin: 0px;
+}
+body {
+    overflow: hidden;
+  }
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.loadingText{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:burlywood;
+    margin-bottom: 50px;
+}
+
+.ballLoader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid red;
+    border-bottom: 16px solid blue;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.arenaClock{
+    font-size: 45px;
+}
+
+.catLoader {
+    transform: scaleX(-1);
+    align-self: flex-start;
+    position: relative;
+    animation: catmovement 10s infinite;
+}
+
+@keyframes catmovement {
+
+    from{
+        left: 0%;
+        transform: scale(-0.5,0.5);
+    }
+    
+    to{
+        left: 100%;
+        transform: scale(-2,2);
+    }
+}
