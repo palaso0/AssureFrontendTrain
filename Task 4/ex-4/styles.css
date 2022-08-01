@@ -49,6 +49,8 @@
     width: 20%;
     color: #fff;
     box-shadow: 0 0 5px 5px #00000040;
+    /* transition: ease-in 0.5s; */
+    opacity: 1;
 }
 
 #menu-wrapper nav {
@@ -69,10 +71,12 @@
 }
 
 .show {
-    visibility: visible;
+    /* visibility: visible; */
+    display: block;
 }
 .hidden {
-    visibility: collapse;
+    /* visibility: collapse; */
+    display: none;
 }
 
 .badge {
@@ -88,4 +92,34 @@
 
 .float-right {
     float: right;
+}
+
+.show-menu{
+    animation: menuShowMovement 0.5s;
+}
+
+@keyframes menuShowMovement {
+
+    from{
+        opacity: 0;
+    }
+    
+    to{
+        opacity: 1;
+    }
+}
+
+.hide-menu{
+    animation: menuHideMovement 0.5s;
+}
+
+@keyframes menuHideMovement {
+
+    from{
+        opacity: 1;
+    }
+    
+    to{
+        opacity: 0;
+    }
 }
