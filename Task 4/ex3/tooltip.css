@@ -8,6 +8,26 @@
   --light-white: white;
 }
 
+@media (prefers-color-scheme: light) {
+  :root{
+    --light-blue: blue;
+  --light-black: black;
+  --light-white: white;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root{
+    --light-blue: cyan;
+    --light-black: white;
+    --light-white: black;
+    background-color: black;
+  }
+  h2{
+    color: white;
+  }
+}
+
 .container {
   display: flex;
   flex-direction: column;
