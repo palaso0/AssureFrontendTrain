@@ -1,0 +1,22 @@
+:root {
+    --green-hex-color: #76b852;
+    --green-rgb-color: rgb(141, 194, 111);
+    --green-lgr-color: linear-gradient(
+        90deg,
+        rgba(141, 194, 111, 1) 0%,
+        rgba(118, 184, 82, 1) 50%
+    );
+    --blue-hex-color: #101a57;
+    --blue-rgb-color: rgb(16, 26, 87);
+}
+
+.bg-green {
+    background: var(--green-hex-color);
+    background: var(--green-rgb-color);
+    background: var(--green-lgr-color);
+}
+
+.bg-blue {
+    background: var(--blue-hex-color);
+    background: var(--blue-rgb-color);
+}
