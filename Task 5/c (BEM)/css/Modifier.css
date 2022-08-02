@@ -1,0 +1,22 @@
+.--is-showed {
+    display: none;
+}
+
+.--fs-12 {
+    font-size: 12px;
+}
+
+.--fs-14 {
+    font-size: 14px;
+}
+
+.--fs-15 {
+    font-size: 15px;
+}
+
+
+.form__button--ps-class:hover,
+.form__button--ps-class:active,
+.form__button--ps-class:focus {
+    background: #43A047;
+}
