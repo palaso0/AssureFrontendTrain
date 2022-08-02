@@ -1,3 +1,4 @@
 Frontend Module
-- Socrates Suyo
+- Jorge Cameo
 - Paulo Choque
+- Socrates Suyo
