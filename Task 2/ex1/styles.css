@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+}
+
+header {
+    background-color: antiquewhite;;
+}
+
+aside {
+    background-color: aqua;
+}
+
+#about {
+    background-color: aquamarine;
+}
+
+#html {
+    background-color: cornflowerblue;
+}
+footer {
+    background-color: orangered;
+}

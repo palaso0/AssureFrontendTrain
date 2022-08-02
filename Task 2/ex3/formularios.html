@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 3</title>
+</head>
+
+<body>
+    <h1>Form</h1>
+
+    <form id="reservation" action="save">
+        <fieldset>
+            <legend>General Information</legend>
+            <label>Arrival date:</label>
+            <input type="date" id="farrival" name="fdate" /><br />
+            <label>Nights:</label>
+            <input type="number" id="fnights" name="fdate" /><br />
+
+            <label>Adults:</label>
+            <select name="adults" id="fselectadult">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select><br />
+
+            <label>Children:</label>
+            <select name="children" id="fselectchildren">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Preferences</legend>
+            <label for="fname">Room type:</label>
+            <input type="radio" id="standar" name="standar" />
+            <label for="standar">Standar</label>
+
+            <input type="radio" id="business" name="business" />
+            <label for="business">Business</label>
+
+            <input type="radio" id="suite" name="suite" />
+            <label for="suite">Suite</label>
+
+            <br />
+
+            <label for="fname">Room type:</label>
+            <input type="radio" id="king" name="king" />
+            <label for="king">King</label>
+
+            <input type="radio" id="double" name="double" />
+            <label for="double">Double Double</label>
+
+            <br />
+
+            <input type="checkbox" id="smoking" name="smoking" />
+            <label for="smoking">Smoking</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Contact Information</legend>
+            <label for="fname">Name:</label>
+            <input type="text" id="name" name="name" required minlength="3" />
+
+            <br />
+
+            <label for="fname">Email:</label>
+            <input type="text" id="email" name="email" required pattern="/\S+@\S+\.\S+/" />
+
+            <br />
+
+            <label for="fname">Phone:</label>
+            <input type="text" id="phone" name="phone" required />
+        </fieldset>
+
+        <br />
+
+        <div>
+            <button>Submit Reservarion</button>
+            <input type="reset" value="reset">
+        </div>
+    </form>
+
+    <h1>Table</h1>
+
+    <table border="1">
+        <tr>
+            <th colspan="4">General Information</th>
+            <th colspan="3">Preferences</th>
+            <th colspan="3">Contact Information</th>
+            <th>Actions</th>
+        </tr>
+        <tr>
+            <th>Arrival date</th>
+            <th>Nights</th>
+            <th>Adults</th>
+            <th>Children</th>
+            <th>Room Type</th>
+            <th>Bed Type</th>
+            <th>Smoking</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+    </table>
+</body>
+
+<script>
+    const arrival = document.getElementById("farrival");
+    const nights = document.getElementById("fnights");
+    const fselectadult = document.getElementById("fselectadult");
+    const arrival = document.getElementById("farrival");
+    const arrival = document.getElementById("farrival");
+
+    noteForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        notesStorage.push(noteInput.value);
+        localStorage.setItem("notes", JSON.stringify(notesStorage));
+        listBuilder(noteInput.value);
+        noteInput.value = "";
+    });
+</script>
+
+</html>
