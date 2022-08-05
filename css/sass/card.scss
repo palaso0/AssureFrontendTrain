@@ -1,0 +1,28 @@
+.card {
+    background-color: #e6e6e6;
+    padding: 10px;
+    border-radius: 5px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card__span {
+    color: #3385ff;
+    font-size: 4rem;
+}
+
+.card__button {
+    background-image: url(../img/background.jpg);
+    border: none;
+    color: white;
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.card__button:hover {
+    cursor: pointer;
+    background-image: url(../img/background-hover.jpg);
+}
