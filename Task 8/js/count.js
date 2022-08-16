@@ -1,9 +1,0 @@
-let counterVal = 0;
-
-function incrementClick() {
-    updateDisplay(++counterVal);
-}
-
-function updateDisplay(val) {
-    document.getElementById("counter-span").innerHTML = val;
-}

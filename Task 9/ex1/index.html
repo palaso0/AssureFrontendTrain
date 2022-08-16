@@ -14,13 +14,13 @@
 
 <body>
     <div class="bg-white py-6 flex flex-col justify-center sm:py-12">
-        <div class="flex items-center justify-center p-12">
+        <div class="z-40 flex items-center justify-center p-12">
             <div class="relative inline-block text-left dropdown">
                 <span class="rounded-md shadow-sm">
                     <button
                         class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800"
                         type="button">
-                        <span>Options</span>
+                        <span>Seleccionar ciudad</span>
                         <svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd"
                                 d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
@@ -29,17 +29,18 @@
                     </button>
                 </span>
                 <div
-                    class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95">
+                    class="pacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95">
                     <div class="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none"
                         aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
                         <div class="py-1">
-                            <span role="menuitem" id="cbb" onclick="temperature()"
+                            <span role="menuitem" id="cbb"
+                                onclick="temperature(-17.393756912052456, -66.15698241247463)"
                                 class="flex justify-between w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 cursor-pointer">
                                 Cochabamba</span>
-                            <span role="menuitem" id="lp" onclick="temperature()"
+                            <span role="menuitem" id="lp" onclick="temperature(-16.5207124, -68.1240775)"
                                 class="flex justify-between w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 cursor-pointer">
                                 La Paz</span>
-                            <span role="menuitem" id="pt" onclick="temperature()"
+                            <span role="menuitem" id="pt" onclick="temperature(-19.5710531, -65.7859079)"
                                 class="flex justify-between w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 cursor-pointer">
                                 Potosí</span>
                         </div>
@@ -49,27 +50,41 @@
         </div>
     </div>
 
-    <div class="p-8">
-        <div class="flex justify-between">
+    <div class="pr-64 pb-8 relative w-full">
+        <div id="spinner" class="z-10 hidden ml-56 bg-gray-400 absolute w-[850px] h-full opacity-80 rounded-lg">
+            <svg role="status" class="absolute top-1/4 left-[370px] inline h-24 w-24 animate-spin text-gray-200 fill-blue-600"
+                viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                    fill="currentColor" />
+                <path
+                    d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                    fill="currentFill" />
+            </svg>
+        </div>
+        <div class="pl-64 flex justify-between">
             <div class="mt-4 flex">
-                <img id="wheater_image" class="mt-0.5 h-12" src="img/wheater.jpg" alt="wheater_image">
+                <img id="weather_image" class="mt-0.5 h-12" src="img/muy_nuboso.jpg" alt="wheater_image">
                 <span>
-                    <h1 class="text-5xl font-semibold">24</h1>
+                    <h1 id="degrees" class="text-5xl font-semibold">0</h1>
                 </span>
-                <span>
-                    <h1 class="text-xl text-gray-500">ºC | ºF</h1>
-                </span>
+                <div class="flex gap-2">
+                    <h1 id="celcius" onclick="changeToCelcius()" class="cursor-pointer text-xl text-gray-900 font-semibold">ºC</h1>
+                    |
+                    <h1 id="fahrenheit" onclick="changeToFahrenheit()" class="cursor-pointer text-xl text-gray-500">ºF</h1>
+                </div>
             </div>
             <div class="flex flex-col items-end">
                 <p class="text-xl font-semibold" id="name">Nombre</p>
                 <p id="day" class="-mt-1">Día</p>
-                <p id="wheater" class="-mt-1">Clima</p>
+                <p id="weather" class="-mt-1">Clima</p>
             </div>
         </div>
-        <div class="flex flex-col ">
-            <p id="prob" >Prob. de precipitaciones: </p>
-            <p id="humidity" class="-mt-1">Humedad: </p>
-            <p id="wind" class="-mt-1">Viento: </p>
+        <div class="pl-64 flex flex-col ">
+            <hr>
+            <p>Prob. de precipitaciones: <span>5%</span> </p>
+            <p class="-mt-1">Humedad: <span id="humidity">0</span>%</p>
+            <p class="-mt-1">Viento: a <span id="wind">0</span>km/h</p>
         </div>
     </div>
 </body>
